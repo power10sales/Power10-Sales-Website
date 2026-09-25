@@ -1,7 +1,10 @@
 # Power10 Sales website
 
 Static site on GitHub Pages at www.powertensales.com. Rebuilt from a WordPress/Beaver Builder
-site; the raw wget mirror is committed in `_source/` as reference material.
+site; the raw wget mirror is committed as `_source.zip` as reference material. It is a zip
+rather than a folder because 32 of its files contain `?` or `:` in the filename, which
+Windows forbids; checking those out breaks `git clone` on Windows entirely. Unzip it locally
+if you need it (the unzipped folder is gitignored). Do not commit it back as loose files.
 
 ## Hard rules
 
@@ -11,7 +14,7 @@ site; the raw wget mirror is committed in `_source/` as reference material.
   place those may appear.
 - **All paths are root-relative** (`/assets/...`). Because of this, opening a page as `file://`
   shows an unstyled mess. Always preview over HTTP.
-- **Never deploy or edit `_source/`.** Reference only.
+- **Never deploy or edit `_source.zip` or an unzipped `_source/`.** Reference only.
 - **Keep `CNAME` and `.nojekyll` at the repo root.** `CNAME` binds the custom domain;
   `.nojekyll` stops GitHub Pages running Jekyll over the files.
 
@@ -46,7 +49,7 @@ hides the "Privacy Policy" heading and shifts the whole page up.
 **2. Icons are subsetted.** Of ~1458 Font Awesome rules, only `.fa-phone-alt`,
 `.fa-envelope-open-text` and `.fa-chevron-up` remain. `fa-solid-900.woff2` still contains every
 solid glyph, so adding another `fas` icon is one CSS line. `fab` / `far` icons need their webfont
-copied from `_source/.../fontawesome/5.15.4/webfonts/` plus an `@font-face`. See the comment above
+copied out of `_source.zip` (`.../fontawesome/5.15.4/webfonts/`) plus an `@font-face`. See the comment above
 the Font Awesome section in site.css.
 
 **3. The email icon is Dashicons, not Font Awesome** (`dashicons-email-alt`, on home and

@@ -49,8 +49,9 @@ You don't have to remember the file names. Just say "the home page" and Claude w
 - **`assets/img`** — all your pictures
 - **`assets/css`** — the colors, fonts and spacing
 - **`assets/js`** — makes the menu and the scroll-to-top arrow work
-- **`_source`** — a saved copy of your old website. None of this is on the internet. It's kept in
-  case something from the old site is ever needed. Leave it alone.
+- **`_source.zip`** — a saved copy of your old website, packed into a single zip file. None of
+  this is on the internet. It's kept in case something from the old site is ever needed. You can
+  ignore it.
 
 ## Adding a picture
 

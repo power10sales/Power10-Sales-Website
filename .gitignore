@@ -1,1 +1,5 @@
 .DS_Store
+
+# The raw wget mirror is stored as _source.zip instead of a folder: 32 of its files
+# contain ? or : in the filename, which Windows will not allow git to check out.
+_source/

@@ -22,7 +22,7 @@
    Look the codepoint up at fontawesome.com/v5/search (filter: Solid, Free).
    BRAND (fab) and REGULAR (far) icons will NOT work: their font files were not shipped
    because nothing used them. To use one, add the matching webfont to assets/fonts/ and an
-   @font-face rule. Originals are in _source/.../fontawesome/5.15.4/webfonts/. */
+   @font-face rule. Originals are inside _source.zip, under .../fontawesome/5.15.4/webfonts/. */
 /* ==========================================================================
    Font Awesome 5.15.4 (solid face only - the pages use .fas icons exclusively)
    ========================================================================== */
