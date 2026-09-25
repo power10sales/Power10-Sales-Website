@@ -123,6 +123,9 @@ The About Us page is two short paragraphs. Things that would strengthen it: how 
 been doing this, which industries it serves, what working with the company is actually like, and why
 these four lines in particular. This is also the cheapest way to improve search performance.
 
+- **Add pictures from my past rowing experience.** Reminder to pull photos and work them into the
+  About Us page.
+
 ---
 
 ## Other suggestions
