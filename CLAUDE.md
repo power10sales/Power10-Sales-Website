@@ -58,13 +58,42 @@ top of site.js; do not move it below the theme block.
 **5. jQuery Migrate, magnific popup and fitVids were removed** after confirming nothing calls
 them. If a future feature needs a lightbox, re-add magnific popup rather than assuming it is there.
 
+## Partner section (home page)
+
+One nested column group per partner, logo left and copy right, in this DOM order:
+**Winonics, GCT, METALfx, KTP**. Earlier the site put GCT and KTP in a single shared group
+(logos stacked in one column, copy in the other), which made each logo's vertical position
+depend on the neighbouring text length. One group per partner removes that coupling, so adding
+or reordering a partner is a self-contained edit.
+
+To add a partner, copy an existing group and give the new column/module nodes fresh ids, then add
+their rules to site.css. **Check the brace depth before inserting CSS**: the `color` and
+`font-size` rules for these modules sit at top level, but the matching `margin-top` rule lives
+inside `@media ( max-width: 768px )`. Pasting a colour rule into that media block leaves the copy
+white-on-white on desktop, which is invisible against the section's white background and easy to
+miss. Verify with a render, not by reading the file.
+
+Node ids added after the original build: `wnc4ph8x2v6t` / `wnc4tx9k3m7r` (Winonics photo/text) and
+`ktp5gr2n8w4d` / `ktp5cl6y1j3s` / `ktp5cl7b9q2f` (KTP group and its two columns). Winonics reuses
+the two empty spacer columns `txo9d8a3qr0h` and `nkelf1tq3c5m` that the original layout left behind.
+
+Known cosmetic quirk, carried over from the original site: the METALfx logo renders roughly 510px
+wide while the other three render 300px, because it is a `size-full` image bounded only by its
+column. Left as-is to match the original.
+
 ## Images
 
-One file per image at its displayed size, with two deliberate exceptions:
+One file per image at its displayed size, with these deliberate exceptions:
 
 - **GCT logo** uses `srcset` (300w + 500w) because the retina file is 29KB vs 6KB.
+- **Winonics logo** uses `srcset` (300w + 600w) for the same reason. The supplied artwork was
+  3300x2550 with the logo floating in transparent padding; it is trimmed to its alpha bounding
+  box (2416x592, ratio 4.08:1) and rendered 300px wide to sit alongside the other partner logos.
 - **KTP logo** ships a single 508px file — it is 2,740 bytes, smaller *and* sharper than its own
   300px version (7,883 bytes), so one file is optimal on every screen.
+
+The rule of thumb: offer two sizes when the retina file is meaningfully heavier; ship one when the
+larger file is already small.
 
 Keep the `width`/`height` attributes. With `height:auto` in the theme CSS, the `width` attribute
 is the presentational hint that holds each logo at its intended display size.
